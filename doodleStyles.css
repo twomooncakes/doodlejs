@@ -1,21 +1,41 @@
 .grid {
     width: 400px;
     height: 600px;
-    background-color: burlywood;
+    background-image: url("background.png");
     position: relative;
+    font-size: 40px;
+    text-align: center;
+    /* For Game Over Screen */
+    font-family: 'Reenie Beanie', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: green;
+}
 
+.restart-btn {
+    cursor: pointer;
+    font-family: 'Reenie Beanie', cursive;
+    text-transform: uppercase;
+    background-color: rgb(245, 228, 78);
+    border: 3px dashed green;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: green; 
+    margin-bottom: 1.5rem;
 }
 
 .doodler {
-    width: 60px;
+    width: 85px;
     height: 85px;
-    background-color: crimson;
+    background-image: url("doodler-guy.png");
     position: absolute;
 }
 
 .platform {
     width: 85px;
     height: 15px;
-    background-color: green;
+    background-image: url("platform.png");
     position: absolute;
 }

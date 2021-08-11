@@ -122,6 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(downTimerId);
         clearInterval(leftTimerId);
         clearInterval(rightTimerId);
+        clearInterval(movePlatforms);
+        document.querySelector(".restart-btn").onclick = () => {
+            restartGame();
+        }
     }
 
     function control(event) {
@@ -142,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isGoingLeft = true;
         leftTimerId = setInterval(function () {
             if (doodlerLeftSpace >= 0) {
-                doodlerLeftSpace -= 10;
+                doodlerLeftSpace -= 5;
                 doodler.style.left = doodlerLeftSpace + "px";
             } else {
                 moveRight();
@@ -159,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isGoingRight = true;
         rightTimerId = setInterval(function () {
             if (doodlerLeftSpace <= 340) {
-                doodlerLeftSpace += 10;
+                doodlerLeftSpace += 5;
                 doodler.style.left = doodlerLeftSpace + "px";
             } else {
                 moveLeft();
@@ -183,6 +187,20 @@ document.addEventListener("DOMContentLoaded", () => {
             jump();
             document.addEventListener("keyup", control);
         }
+    }
+
+    function restartGame() {
+        grid.innerHTML = "";
+        platforms = [];
+        doodlerLeftSpace = 50;
+        startPoint = 150;
+        doodlerBottomSpace = startPoint;
+        isJumping = true;
+        isGoingLeft = false;
+        isGoingRight = false;
+        isGameOver = false;
+        score = 0;
+        start();
     }
 
     start();

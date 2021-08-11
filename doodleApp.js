@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function gameOver() {
         console.log("game over");
+        isGameOver = true;
+        clearInterval(upTimerId);
+        clearInterval(downTimerId);
+
     }
 
     function start() {
